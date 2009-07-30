@@ -17,7 +17,7 @@ class Recipe(object):
         options['path'] = ''
         requirements, ws = self.egg.working_set()
         for k,v in ws.by_key.items():
-            if k == options['egg']:
+            if k == options['egg'] or k.replace('-', '_') == options['egg']:
                 loc = [v.location]
                 loc.extend(k.split('.'))
                 self.path = os.path.join(*loc)
