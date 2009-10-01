@@ -16,10 +16,13 @@ class Recipe(object):
         self.path = ''
         options['path'] = ''
         requirements, ws = self.egg.working_set()
-        for k,v in ws.by_key.items():
+        
+        for k,v in ws.by_key.items():            
             if k == options['egg'] or k.replace('-', '_') == options['egg']:
                 loc = [v.location]
-                loc.extend(options['egg'].split('.'))
+                if not os.path.isdir(v.location):
+                    #not zipped package, append egg name
+                    loc.extend(options['egg'].split('.'))
                 self.path = os.path.join(*loc)
                 options['path'] = self.path
 
