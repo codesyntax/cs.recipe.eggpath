@@ -14,7 +14,9 @@ class Recipe(object):
         self.egg = Egg(buildout, options['egg'], options)
 
         self.path = ''
+        self.egglocation = ''
         options['path'] = ''
+        options['egglocation'] = ''
         requirements, ws = self.egg.working_set()
         
         for k,v in ws.by_key.items():            
@@ -24,8 +26,9 @@ class Recipe(object):
                     #not zipped package, append egg name
                     loc.extend(options['egg'].split('.'))
                 self.path = os.path.join(*loc)
+                self.egglocation = v.location
                 options['path'] = self.path
-
+                options['egglocation'] = self.egglocation 
         self.logger.info(self.path)
         
     def install(self):
