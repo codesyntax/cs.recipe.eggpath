@@ -1,5 +1,5 @@
-1.0 (xxxx-xx-xx)
-----------------
+1.7 
+-------------------
 
-- Created recipe with ZopeSkel
-  [Mikel Larreategi]
+- First public version
+  [erral]
