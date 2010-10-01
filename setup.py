@@ -16,8 +16,6 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('cs', 'recipe', 'eggpath', 'README.txt')
-    + '\n' +
     'Contributors\n' 
     '************\n'
     + '\n' +
