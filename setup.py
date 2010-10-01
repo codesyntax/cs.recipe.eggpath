@@ -26,7 +26,7 @@ long_description = (
     + '\n' + 
     read('CHANGES.txt')
     + '\n' +
-   'Download\n'
+    'Download\n'
     '********\n'
     )
 entry_point = 'cs.recipe.eggpath:Recipe'
